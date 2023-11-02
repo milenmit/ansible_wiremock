@@ -1,0 +1,21 @@
+---
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: /opt/wiremock/versions
+    state: directory
+    mode: '0755'
+
+
+- name: Getting wiremock jar
+  get_url:
+    url: "{{ wiremock_src }}"
+    dest: "{{ wiremock_original }}"
+    mode: '0440'
+  become: yes
+
+- name: Linking wiremock jar
+  file:
+    src: "{{ wiremock_original }}"
+    dest: "{{ wiremock_dest }}"
+    state: link
+  become: yes

@@ -1,0 +1,6 @@
+---
+# defaults file for wiremock
+wiremock_version: 2.24.1
+wiremock_src: "https://repo1.maven.org/maven2/com/github/tomakehurst/wiremock-standalone/{{ wiremock_version }}/wiremock-standalone-{{ wiremock_version }}.jar"
+wiremock_original: "/opt/wiremock/versions/wiremock-standalone-{{ wiremock_version }}.jar"
+wiremock_dest: /opt/wiremock/latest

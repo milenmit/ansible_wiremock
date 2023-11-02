@@ -1,0 +1,6 @@
+---
+# tasks file for wiremock
+
+- include_tasks: install.yml
+- include_tasks: configure.yml
+  

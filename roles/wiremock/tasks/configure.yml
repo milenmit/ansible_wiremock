@@ -1,0 +1,11 @@
+
+- name: Create WireMock systemd service file
+  copy:
+    src: wiremock.service
+    dest: /etc/systemd/system/wiremock.service
+    owner: root
+    group: root
+    mode: '0644'
+  
+  notify: 'wiremock'
+  

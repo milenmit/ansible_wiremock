@@ -1,0 +1,14 @@
+---
+# handlers file for wiremock
+
+- name: Enable service wiremock, and not touch the state
+  service:
+    name: wiremock
+    enabled: yes
+  listen: wiremock
+
+- name: Start service wiremock, if not started
+  service:
+    name: wiremock
+    state: started
+  listen: wiremock

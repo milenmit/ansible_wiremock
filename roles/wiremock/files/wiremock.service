@@ -1,0 +1,15 @@
+[Unit]
+Description=WireMock
+After=network.target
+ 
+[Service]
+WorkingDirectory=/opt/wiremock
+ExecStart=/bin/sh -c "/usr/bin/java -Droot.logLevel=TRACE -Dlatest.logLevel=TRACE -jar /opt/wiremock/latest --port 9999 --https-port 9443 --verbose --async-response-enabled true --global-response-templating 2>&1 > wiremock.log"
+ExecStop=/bin/kill -TERM $MAINPID
+User=root
+Group=root
+TimeoutSec=6000
+SuccessExitStatus=143
+ 
+[Install]
+WantedBy=multi-user.target
