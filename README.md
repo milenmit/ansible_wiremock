@@ -1,4 +1,4 @@
-# ansible_wiremock
+# ansible_wiremock - RPM based
 
 If you need to test some APIs and need to mock the response -> you could use wiremock.
 
